@@ -53,8 +53,13 @@
               >
               <li class="list-group-item" v-for="message in messages">
                 <span :class="{'float-left':message.type === 1}">
+                  <small v-if="message.type===1"
+                    ><strong>{{message.user}}: </strong></small
+                  >
                   {{message.message}}
-                  <strong><small>:{{message.user}}</small></strong>
+                  <small v-if="message.type===0"
+                    ><strong> :{{message.user}}</strong></small
+                  >
                 </span>
               </li>
             </ul>
